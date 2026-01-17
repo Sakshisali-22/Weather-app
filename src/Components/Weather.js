@@ -30,13 +30,13 @@ const Weather = (city) => {
         setSearch("");
         
          
-        if(search == ""){
+        if(search === ""){
            
           alert("Please Enter City Name")
           setError("Please Enter City Name")
 
         }
-        else if(jsonData.cod == "404"){
+        else if(jsonData.cod === "404"){
           setError("Invalid name, City Not Fount")
         }
         else{
@@ -73,11 +73,11 @@ const Weather = (city) => {
           data && data.weather ?
           <div className="weathers">
             <h2  className="cityName">{data.name}</h2 >
-            {data.weather[0].main == "Clouds" ? <img src={cloud}/> :"" }
-            {data.weather[0].main == "Clear" ? <img src={clear}/> :"" }
-            {data.weather[0].main == "Rain" ? <img src={rain}/> : ""}
-            {data.weather[0].main == "Mist" ? <img src={mist}/> : ""}
-            {data.weather[0].main == "Haze" ? <img src={mist}/> : ""}
+            {data.weather[0].main === "Clouds" ? <img src={cloud}/> :"" }
+            {data.weather[0].main === "Clear" ? <img src={clear}/> :"" }
+            {data.weather[0].main === "Rain" ? <img src={rain}/> : ""}
+            {data.weather[0].main === "Mist" ? <img src={mist}/> : ""}
+            {data.weather[0].main === "Haze" ? <img src={mist}/> : ""}
 
 
 

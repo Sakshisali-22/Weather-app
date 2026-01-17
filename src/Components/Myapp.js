@@ -32,7 +32,7 @@ const Myapp = () => {
             // alert("Enter name")
             setError("Please Enter Name")
         }
-        else if(jsonData.cod == '404'){
+        else if(jsonData.cod === '404'){
             setError("Please Enter Valid Name !")
         }else{
             setError("")
@@ -59,11 +59,11 @@ const Myapp = () => {
                 data && data.weather ?
                 <div className='weathers'>
                     <h2 className='cityName'>{data.name}</h2>
-                    <img src={data.weather[0].main == "Clouds" ? cloud : "" }/>
-                    <img src={data.weather[0].main == "Rain" ? rain : "" }/>
-                    <img src={data.weather[0].main == "Clear" ? clear : "" }/>
-                    <img src={data.weather[0].main == "Mist" ? mist : "" }/>
-                    <img src={data.weather[0].main == "Haze" ? cloud : "" }/>
+                    <img src={data.weather[0].main === "Clouds" ? cloud : "" }/>
+                    <img src={data.weather[0].main === "Rain" ? rain : "" }/>
+                    <img src={data.weather[0].main === "Clear" ? clear : "" }/>
+                    <img src={data.weather[0].main === "Mist" ? mist : "" }/>
+                    <img src={data.weather[0].main === "Haze" ? cloud : "" }/>
 
                     <h2 className='temprature'>{Math.trunc(data.main.temp)}°C</h2>
                     <p  className='climate'>{data.weather[0].description}</p>
