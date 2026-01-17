@@ -14,7 +14,7 @@ const Myapp = () => {
     const [error, setError] = useState()
 
     const API_KEY ="6d83156e4e40ca97d0c6924b832fe00c"
-    const API = "https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}"
+    // const API = "https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}"
 
     const handleInput = (event) =>{
         setSearch(event.target.value)
@@ -52,18 +52,18 @@ const Myapp = () => {
                 error ?
                 <div className='errorPage'>
                     <p>{error}</p>
-                    <img src={err}/>
+                    <img alt='err' src={err}/>
                 </div> : ""
             }
             {
                 data && data.weather ?
                 <div className='weathers'>
                     <h2 className='cityName'>{data.name}</h2>
-                    <img src={data.weather[0].main === "Clouds" ? cloud : "" }/>
-                    <img src={data.weather[0].main === "Rain" ? rain : "" }/>
-                    <img src={data.weather[0].main === "Clear" ? clear : "" }/>
-                    <img src={data.weather[0].main === "Mist" ? mist : "" }/>
-                    <img src={data.weather[0].main === "Haze" ? cloud : "" }/>
+                    <img alt='cloud' src={data.weather[0].main === "Clouds" ? cloud : "" }/>
+                    <img alt='rain' src={data.weather[0].main === "Rain" ? rain : "" }/>
+                    <img alt='clear' src={data.weather[0].main === "Clear" ? clear : "" }/>
+                    <img alt='mist' src={data.weather[0].main === "Mist" ? mist : "" }/>
+                    <img alt='cloud' src={data.weather[0].main === "Haze" ? cloud : "" }/>
 
                     <h2 className='temprature'>{Math.trunc(data.main.temp)}°C</h2>
                     <p  className='climate'>{data.weather[0].description}</p>
